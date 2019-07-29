@@ -50,7 +50,6 @@ export default {
   .weekend
     background-color: #eee;
     .title
-      margin-top: .1rem;
       height: .8rem;
       line-height: .8rem;
       text-indent: .2rem
