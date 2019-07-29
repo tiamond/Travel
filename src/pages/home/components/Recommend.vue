@@ -3,7 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
       <li class="item border-bottom"
-          v-for="item of recommendList"
+          v-for="item of list"
           :key="item.id"
       >
         <img class="item-img" :src="item.imgUrl">
@@ -20,25 +20,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1907/60/60cbead2ec163212a3.water.jpg_200x200_c4236b65.jpg',
-        title: '杭州浪浪浪水公园',
-        desc: '杭州，前世今生与你有一场美丽约会杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1907/60/60cbead2ec163212a3.water.jpg_200x200_c4236b65.jpg',
-        title: '杭州浪浪浪水公园',
-        desc: '杭州，前世今生与你有一场美丽约会杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1907/60/60cbead2ec163212a3.water.jpg_200x200_c4236b65.jpg',
-        title: '杭州浪浪浪水公园',
-        desc: '杭州，前世今生与你有一场美丽约会杭州，前世今生与你有一场美丽约会'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

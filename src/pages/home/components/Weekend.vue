@@ -3,7 +3,7 @@
     <div class="title">周末去哪儿</div>
     <ul>
       <li class="item border-bottom"
-          v-for="item of recommendList"
+          v-for="item of list"
           :key="item.id"
       >
         <div class="item-img-wrap">
@@ -21,25 +21,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-        title: '杭州浪浪浪水公园',
-        desc: '杭州，前世今生与你有一场美丽约会杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-        title: '杭州浪浪浪水公园',
-        desc: '杭州，前世今生与你有一场美丽约会杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-        title: '杭州浪浪浪水公园',
-        desc: '杭州，前世今生与你有一场美丽约会杭州，前世今生与你有一场美丽约会'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -72,7 +55,6 @@ export default {
         .info-title
           color: .32rem
           margin: .1rem;
-          font-weight: bold
         .info-desc
           ellipsis()
           text-indent: .1rem
