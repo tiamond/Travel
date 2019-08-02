@@ -4,7 +4,7 @@
       <div class="iconfont back-abs-icon">&#xe624;</div>
     </router-link>
     <div class="header-fixed" v-show="!showHeader" :style="opacityStyle">
-      景点选择
+      {{sightName}}
       <router-link to="/">
         <div class="iconfont back-icon">&#xe624;</div>
       </router-link>
@@ -15,6 +15,7 @@
 <script>
 export default {
   name: 'DetailHeader',
+  props: ['sightName'],
   data () {
     return {
       showHeader: true,
@@ -25,6 +26,7 @@ export default {
   },
   methods: {
     handleScroll () {
+      console.log('111')
       const top = document.documentElement.scrollTop
       if (top > 60) {
         let opacity = top / 140
@@ -38,10 +40,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
@@ -62,7 +64,7 @@ export default {
     .back-abs-icon
       color: #fff
   .header-fixed
-    z-index: 2
+    z-index: 3
     position: fixed
     overflow: hidden;
     width: 100%;
