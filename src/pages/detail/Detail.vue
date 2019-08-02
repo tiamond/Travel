@@ -51,7 +51,6 @@ export default {
   },
   mounted () {
     this.getDetailInfo()
-    console.log(this.$route.params.id)
   },
   methods: {
     getDetailInfo () {
