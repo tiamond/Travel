@@ -1,0 +1,31 @@
+<template>
+  <div>
+    <div v-for="(item, index) of list" :key="index" class="item">
+      <div class="item-title border-bottom">
+        <span>图</span>
+        {{ item.title }}
+      </div>
+      <div v-if="item.children" class="item-children">
+        <detail-list :list="item.children"></detail-list>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'DetailList',
+  props: {
+    list: Array
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  .item-title
+    padding-left: .2rem;
+    height: .6rem;
+    line-height: .6rem;
+  .item-children
+    padding: 0 .2rem;
+</style>

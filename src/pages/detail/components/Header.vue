@@ -62,6 +62,7 @@ export default {
     .back-abs-icon
       color: #fff
   .header-fixed
+    z-index: 2
     position: fixed
     overflow: hidden;
     width: 100%;
