@@ -1,7 +1,9 @@
 <template>
   <div class="swiper">
-    <swiper :options="swiperOption"
+    <swiper
+      :options="swiperOption"
       v-if="showSwiper"
+      ref="mySwiper"
     >
       <swiper-slide v-for="item of list"
         :key="item.id"
@@ -25,7 +27,9 @@ export default {
         pagination: '.swiper-pagination',
         loop: true,
         autoplay: 2000,
-        autoplayDisableOnInteraction: false
+        autoplayDisableOnInteraction: false,
+        observer: true,
+        observeparents: true
       }
     }
   },

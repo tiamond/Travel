@@ -67,13 +67,16 @@ export default {
   },
   mounted () {
     // this.scrool = new BScroll(this.$refs.listWrapper)
-    this.scroll = new BScroll('.list')
+    this.scroll = new BScroll('.list', {click: true})
   },
   watch: {
     letter () {
       // console.log(this.$refs[this.letter][0])
       this.scroll.scrollToElement(this.$refs[this.letter][0])
     }
+  },
+  activated () {
+    this.scroll.refresh()
   }
 }
 </script>
